@@ -3,7 +3,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 import { createMarkup } from './createMarkup';
-import { PixabayAPI } from './pixabayApi';
+import { PixabayAPI } from './pixabayAPI';
 import { refs } from './refs';
 import { notifyInit } from './notifyInit';
 import { spinnerPlay, spinnerStop } from './spinner';
@@ -109,12 +109,13 @@ const onSubmitClick = async event => {
     Notify.success(`Hooray! We found ${total} images.`, notifyInit);
 
     if (pixaby.hasMorePhotos) {
+
       const lastItem = document.querySelector('.gallery a:last-child');
       observer.observe(lastItem);
     }
 
     modalLightboxGallery.refresh();
-    // scrollPage();
+    
   } catch (error) {
     Notify.failure(error.message, 'Something went wrong!', notifyInit);
 
@@ -166,7 +167,7 @@ function scrollPage() {
   });
 }
 
-// scroll up
+//Button scroll up
 
 window.addEventListener('scroll', scrollFunction);
 

@@ -82,6 +82,18 @@
   text-shadow: 1px 1px 1px #fff;
 }
 
+// @media screen and (min-width: 480px) {
+//  font-size: 75rem;
+// }
+
+// @include tablet {
+// font-size: .875rem;
+// }
+
+//  @include desktop {
+//    font-size: .75rem;
+//  }
+
 .info-item-likes {
   display: flex;
   flex-direction: row;
