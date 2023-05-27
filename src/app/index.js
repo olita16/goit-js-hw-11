@@ -42,6 +42,9 @@ const loadMorePhotos = async function (entries, observer) {
         spinnerPlay();
 
         const { hits } = await pixaby.getPhotos();
+
+        spinnerStop();
+
         const markup = createMarkup(hits);
         refs.gallery.insertAdjacentHTML('beforeend', markup);
 
@@ -66,7 +69,7 @@ const loadMorePhotos = async function (entries, observer) {
   });
 };
 
-const observer = new IntersectionObserver(loadMorePhotos, options);
+// const observer = new IntersectionObserver(loadMorePhotos, options);
 
 const onSubmitClick = async event => {
   event.preventDefault();
@@ -110,8 +113,8 @@ const onSubmitClick = async event => {
 
     if (pixaby.hasMorePhotos) {
 
-      const lastItem = document.querySelector('.gallery a:last-child');
-      observer.observe(lastItem);
+      // const lastItem = document.querySelector('.gallery a:last-child');
+      // // observer.observe(lastItem);
     }
 
     modalLightboxGallery.refresh();
